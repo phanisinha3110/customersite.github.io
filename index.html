@@ -28,7 +28,9 @@
         </div>
         
     </style>
-
+<button onclick="bootstrapChat()">
+	Click me to show the Embedded Chat experience.
+</button>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
      
@@ -189,11 +191,9 @@
 
         }, 1000);
     
-    window.onload=function(){        
-
-      console.log('Inside Start Chat');
-      embedded_svc.bootstrapEmbeddedService();
-    };
+   function bootstrapChat() {
+		embedded_svc.bootstrapEmbeddedService();
+	}
 
 </script>
 </HTML>
