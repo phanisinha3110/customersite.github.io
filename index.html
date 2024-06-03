@@ -165,15 +165,9 @@
     
     
    function bootstrapChat() {
+	   embedded_svc.bootstrapEmbeddedService();
 		console.log('Inside Start Chat');
-      embedded_svc.liveAgentAPI.startChat({
-        directToAgentRouting: {
-          buttonId: "573Oy000000QkqP",
-          fallback: true
-        },
-        extraPrechatInfo: [],
-        extraPrechatFormDetails: []
-      });
+      
 	}
 
 </script>
