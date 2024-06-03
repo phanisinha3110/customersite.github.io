@@ -1,6 +1,30 @@
 <HTML>
   
     <style type='text/css'>
+	    .embeddedServiceHelpButton .helpButton .uiButton {
+		background-color: #005290;
+		font-family: "Arial", sans-serif;
+	}
+	.embeddedServiceHelpButton .helpButton .uiButton:focus {
+		outline: 1px solid #005290;
+	}
+        
+        <div class="slds-scope">
+            :host 
+            {
+            display: flex;
+            flex-direction: column;
+            }
+            
+            lightning-button {
+            padding-top: 1em;
+            }
+            .slds-scope .slds-has-error .slds-form-element__help 
+            {
+            color: var(--slds-g-color-error-base-40, rgb(234, 0, 30)));
+            text-align: left;
+            }
+        </div>
     </style>
 <button onclick="bootstrapChat()">
 	Click me to show the Embedded Chat experience.
@@ -108,7 +132,7 @@
 
 		embedded_svc.init(
 			'https://wolterskluwergrcelm--uat.sandbox.my.salesforce.com',
-			'https://wolterskluwergrcelm--uat.sandbox.my.salesforce-sites.com/Chatbot',
+			'https://wolterskluwergrcelm--uat.sandbox.my.salesforce-sites.com/ELMT360ChatBot',
 			gslbBaseURL,
 			'00DOy0000016WO4',
 			'ELMerT360ServiceDepolyment',
