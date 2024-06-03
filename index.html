@@ -4,8 +4,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-    <style type='text/css'>
-	    .embeddedServiceHelpButton .helpButton .uiButton {
+	<style type='text/css'>
+        .embeddedServiceHelpButton .helpButton .uiButton {
 		background-color: #005290;
 		font-family: "Arial", sans-serif;
 	}
@@ -28,13 +28,13 @@
             color: var(--slds-g-color-error-base-40, rgb(234, 0, 30)));
             text-align: left;
             }
-        </div>
-    </style>
+        </div>     
+	</style>
 <button onclick="bootstrapChat()">
-	Click me to show the Embedded Chat experience.
+	LiveChat
 </button>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>    
+<script type='text/javascript'>
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = false; //Or true
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -136,16 +136,16 @@
 
 		embedded_svc.init(
 			'https://wolterskluwergrcelm--uat.sandbox.my.salesforce.com',
-			'https://wolterskluwergrcelm--uat.sandbox.my.salesforce-sites.com/ELMT360ChatBot',
+			'https://wolterskluwergrcelm--uat.sandbox.my.salesforce-sites.com/Chatbot',
 			gslbBaseURL,
 			'00DOy0000016WO4',
-			'ELMerT360ServiceDepolyment',
+			'ELMerServiceDepolyment',
 			{
 				baseLiveAgentContentURL: 'https://c.la2s-core1.sfdc-yfeipo.salesforceliveagent.com/content',
 				deploymentId: '572Oy000000yWeX',
-				buttonId: '573Oy000000QkqP',
+				buttonId: '573Oy000000FiaD',
 				baseLiveAgentURL: 'https://d.la2s-core1.sfdc-yfeipo.salesforceliveagent.com/chat',
-				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IOy000000GHL3MAO_18f6d0410e2',
+				eswLiveAgentDevName: 'EmbeddedServiceLiveAgent_Parent04IOy000000DtgDMAS_18e55b288bf',
 				isOfflineSupportEnabled: false
 			}
 		);
@@ -161,13 +161,13 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-    
-    
-   function bootstrapChat() {
+	
+	
+	function bootstrapChat() {
 	   embedded_svc.bootstrapEmbeddedService();
 		console.log('Inside Start Chat');
       
 	}
-
+	
 </script>
 </HTML>
