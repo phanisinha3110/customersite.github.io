@@ -32,10 +32,7 @@
 	Click me to show the Embedded Chat experience.
 </button>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
-<script type='text/javascript'>
-     
-    var disableTextTopic = '{!JSENCODE($Label.disableTextTopic)}'.split(';');
-    
+<script type='text/javascript'>    
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = false; //Or true
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -162,34 +159,7 @@
 	} else {
 		initESW('https://service.force.com');
 	}
-    setInterval(function() {
-            var menuOptionsFound = false;
- 
-            var menuOptionsElements = document.querySelectorAll('.embeddedServiceLiveAgentStateChatButtonMessage .chatContent .uiButton');
-			console.log('setInterval'+menuOptionsElements);
-            menuOptionsElements.forEach(function(element) {
-
-                if (disableTextTopic.includes(element.innerText.trim())) {
-
-                    menuOptionsFound = true;
-
-                }
-
-            });
- 
-            var chatInputFooter = document.querySelector('.embeddedServiceLiveAgentStateChatInputFooter .chasitorControls .uiInput');
-
-            if (menuOptionsFound && chatInputFooter != null && chatInputFooter != undefined) {
-
-                chatInputFooter.style.display = 'none'; // Hide chat input footer
-
-            } else if(chatInputFooter != null && chatInputFooter != undefined){
-
-                chatInputFooter.style.display = 'block'; // Show chat input footer
-
-            }
-
-        }, 1000);
+    
     
    function bootstrapChat() {
 		embedded_svc.bootstrapEmbeddedService();
