@@ -161,6 +161,24 @@
 	} else {
 		initESW('https://service.force.com');
 	}
+	setInterval(function() {
+    		var menuOptionsFound = false;
+    		var menuOptionsElements = document.querySelectorAll('.embeddedServiceLiveAgentStateChatButtonMessage .chatContent .uiButton');
+    		menuOptionsElements.forEach(function(element) {
+	        if (element.innerText.trim().toLowerCase() === 'yes' || element.innerText.trim().toLowerCase() === 'no' || element.innerText.trim().toLowerCase() === 'Next'
+	           ||element.innerText.trim().toLowerCase() === 'I want to add a timekeeper' || element.innerText.trim().toLowerCase() === 'I want to add a timekeeper ID') {
+	            menuOptionsFound = true;
+	        }
+	    	});
+
+	    	var chatInputFooter = document.querySelector('.embeddedServiceLiveAgentStateChatInputFooter .chasitorControls .uiInput');
+		if(chatInputFooter != null ){
+	    		if (menuOptionsFound ) {
+	        		chatInputFooter.style.display = 'none'; // Hide chat input footer
+	    	} else {
+	        	chatInputFooter.style.display = 'block'; // Show chat input footer
+	    	} }
+	}, 1000);
 	
 	
 	function bootstrapChat() {
