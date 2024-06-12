@@ -162,16 +162,20 @@
 		initESW('https://service.force.com');
 	}
 	setInterval(function() {
+		console.log('Inside setInterval');
     		var menuOptionsFound = false;
     		var menuOptionsElements = document.querySelectorAll('.embeddedServiceLiveAgentStateChatButtonMessage .chatContent .uiButton');
+		console.log('menuOptionsElements'+menuOptionsElements);
+		
     		menuOptionsElements.forEach(function(element) {
-	        if (element.innerText.trim().toLowerCase() === 'yes' || element.innerText.trim().toLowerCase() === 'no' || element.innerText.trim().toLowerCase() === 'Next'
-	           ||element.innerText.trim().toLowerCase() === 'I want to add a timekeeper' || element.innerText.trim().toLowerCase() === 'I want to add a timekeeper ID') {
+	        if (element.innerText.trim().toLowerCase() === 'yes' || element.innerText.trim().toLowerCase() === 'no' || element.innerText.trim().toLowerCase() === 'next'
+	           ||element.innerText.trim().toLowerCase() === 'i want to add a timekeeper' || element.innerText.trim().toLowerCase() === 'i want to add a timekeeper id') {
 	            menuOptionsFound = true;
 	        }
 	    	});
-
+		console.log('menuOptionsFound'+menuOptionsFound);
 	    	var chatInputFooter = document.querySelector('.embeddedServiceLiveAgentStateChatInputFooter .chasitorControls .uiInput');
+		console.log('chatInputFooter'+chatInputFooter);
 		if(chatInputFooter != null ){
 	    		if (menuOptionsFound ) {
 	        		chatInputFooter.style.display = 'none'; // Hide chat input footer
