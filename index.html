@@ -186,9 +186,12 @@
 	
 	
 	function bootstrapChat() {
+	Try{	
 	   embedded_svc.bootstrapEmbeddedService();
 		console.log('Inside Start Chat');
-      
+	}Catch(err){
+		console.log('error occured'+err.message);
+	}
 	}
 	
 </script>
