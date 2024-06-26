@@ -195,6 +195,10 @@
 	}catch(err){
 		console.log('error occured'+err.message);
 	}
+
+	window.onerror = function (msg, url, lineNo, columnNo, error) {
+		console.log('uncaught error occured')
+	}
 	
 </script>
 </HTML>
