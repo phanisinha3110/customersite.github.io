@@ -35,6 +35,7 @@
 </button>
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
 <script type='text/javascript'>
+	try{
 	var initESW = function(gslbBaseURL) {
 		embedded_svc.settings.displayHelpButton = false; //Or true
 		embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -186,12 +187,13 @@
 	
 	
 	function bootstrapChat() {
-	try{	
+		
 	   embedded_svc.bootstrapEmbeddedService();
 	   console.log('Inside Start Chat');
+	
+	}
 	}catch(err){
 		console.log('error occured'+err.message);
-	}
 	}
 	
 </script>
